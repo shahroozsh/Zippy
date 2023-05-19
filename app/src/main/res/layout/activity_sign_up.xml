@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="listener"
+            type="com.zippy.zippympv.view.auth.SingUpActivity" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#000"
+        android:backgroundTint="#000">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+
+            android:src="@drawable/background_login_register" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cover_background"
+            android:scaleType="centerCrop" />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:backgroundTint="#00000000">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:theme="@style/ThemeOverlay.Material3.Dark"
+
+                    app:layout_collapseMode="pin">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:background="@drawable/circle_view"
+                        android:onClick="@{listener::onClickBack}"
+                        android:src="@drawable/baseline_keyboard_arrow_left_24"
+                        app:tint="#B8B8B8" />
+
+                </androidx.appcompat.widget.Toolbar>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    style="@style/textLabelOpen"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:text="@string/sign_up_for_zippy"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/label_actionbar"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+            android:background="@drawable/radius_layout_register"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineBegin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="24dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="24dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/labelSign"
+                    style="@style/textLabelOpen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:text="@string/sign_up"
+                    android:textSize="17sp"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tTitle"
+                    style="@style/textViewOpen"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+
+                    android:text="@string/txt"
+
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/labelSign" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tIdentity"
+                    style="@style/textViewOpen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="16dp"
+                    android:text="@string/wrong_identity"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/tTitle" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tStartOver"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/start_over"
+                    android:textColor="@color/black"
+                    app:layout_constraintBottom_toBottomOf="@+id/tIdentity"
+                    app:layout_constraintStart_toEndOf="@+id/tIdentity"
+                    app:layout_constraintTop_toTopOf="@+id/tIdentity" />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/labelName"
+                    style="@style/textLabelOpen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/name"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/tStartOver" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputUserName"
+
+                    style="@style/inputLayoutWhiteApp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/labelName"
+                    app:layout_constraintVertical_bias="0.57">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/eUsername"
+                        style="@style/editTextOpen"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:hint="@string/pre_poluated_name"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="#C8C8C8"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/labelEmail"
+                    style="@style/textLabelOpen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="@string/email"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/inputUserName" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputEmail"
+
+                    style="@style/inputLayoutWhiteApp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/labelEmail"
+                    app:layout_constraintVertical_bias="0.57">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/eEmail"
+                        style="@style/editTextOpen"
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/pre_poluated_email"
+                        android:imeOptions="actionDone"
+                        android:inputType="text"
+
+                        android:maxLength="30"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textColorHint="#C8C8C8"
+
+                        />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <CheckBox
+                    android:id="@+id/checkBoxTermCondition"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+
+                    android:gravity="top"
+                    android:text="@string/terms_of_condition"
+                    android:textColor="@color/gray_description"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxReceive"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/receive_marketing_email_information"
+
+
+                    android:textColor="#A3A3A3"
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxTermCondition" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGetStarted"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="36dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="@color/blue"
+                    android:onClick="@{listener::onClickCreateAccount}"
+                    android:text="@string/create_account"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/checkBoxReceive" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>

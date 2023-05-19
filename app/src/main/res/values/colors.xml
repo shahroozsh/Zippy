@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#FA7169</color>
+    <color name="colorPrimaryTransparet">#7EFA7169</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_7">#777777</color>
+    <color name="tintIcon">#aaaaaa</color>
+
+    <color name="blackApp">#011222</color>
+
+    <color name="background_app">#292929</color>
+    o	Background color of the app
+
+    <color name="blue">#0099E9</color>
+    o	Some Buttons
+    o	Some check boxes
+    o	Navigation Arrows
+    o	Text Field Borders
+    o	Some Frames as Background color
+    o	Send Arrows
+    o	Outline color of grey text boxes and selection boxes
+
+    <color name="cancel_button">#FF0000</color>
+    o	Cancel buttons
+    o	Decline buttons
+    o	Exit buttons
+
+    <color name="gray">#494949</color>
+    o	Grey text boxes as background color
+    o	Some frames as background color
+    o	Service type icon background color
+
+    <color name="pink">#D30069</color>
+    o	Some Buttons
+    o	Some Frames as Background color
+    o	Photo Frame examples
+
+    <color name="green">#41AC18</color>
+    <color name="gray_float">#D5494949</color>
+    <color name="cover_background">#A10099E9</color>
+    <color name="gray_description">#A3A3A3</color>
+    o	Some Buttons
+    o	Some Frames as Background color
+    o	As loading track background after loaded
+
+
+
+
+</resources>

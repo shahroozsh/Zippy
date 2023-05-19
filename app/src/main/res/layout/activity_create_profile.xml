@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="listener"
+            type="com.zippy.zippympv.view.auth.CreateProfileActivity" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/constraint"
+        android:background="#000"
+        android:backgroundTint="#000"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+
+            android:src="@drawable/background_login_register"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:background="@color/cover_background"
+            />
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:backgroundTint="#00000000"
+            >
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsingToolbarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+
+                app:layout_scrollFlags="noScroll"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    app:layout_collapseMode="pin"
+
+
+                    android:theme="@style/ThemeOverlay.Material3.Dark">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="top"
+                        android:onClick="@{listener::onClickBack}"
+                        android:background="@drawable/circle_view"
+                        app:tint="#B8B8B8"
+                        android:src="@drawable/baseline_keyboard_arrow_left_24"/>
+
+                </androidx.appcompat.widget.Toolbar>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="start"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginEnd="24dp"
+                    android:text="Profile">
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/labelWelcome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/textLabelOpen"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textSize="35sp"
+                        app:layout_constraintTop_toTopOf="parent"
+
+                        android:textColor="@color/white"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="8dp"
+                        android:textStyle="bold"
+                        android:gravity="start"
+                        android:text="@string/welcome"
+                        />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/labelCreate"
+                        style="@style/textLabelOpen"
+                        android:textSize="@dimen/label_actionbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/labelWelcome"
+
+                        android:textColor="@color/white"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="8dp"
+                        android:textStyle="bold"
+                        android:gravity="start"
+                        android:text="@string/let_s_create_your"
+                        />
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/labelProfile"
+                        style="@style/textLabelOpen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        android:textSize="35sp"
+                        app:layout_constraintTop_toBottomOf="@+id/labelCreate"
+
+                        android:textColor="@color/white"
+                        android:layout_gravity="bottom"
+                        android:layout_marginBottom="8dp"
+                        android:textStyle="bold"
+                        android:gravity="start"
+                        android:text="@string/profile"
+                        />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+
+
+            android:background="@drawable/radius_layout_register"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineBegin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintGuide_begin="24dp"
+                    android:orientation="vertical"
+                    />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/guidelineEnd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintGuide_end="24dp"
+                    android:orientation="vertical"
+                    />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/labelSign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textLabelOpen"
+                    android:textSize="17sp"
+                    android:text="@string/create_profile"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tTitle"
+                    style="@style/textViewOpen"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/let_s_get_better"
+                    android:textColor="@color/gray_description"
+
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/labelSign"/>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintPhoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/tTitle">
+
+
+
+                    <FrameLayout
+                        android:id="@+id/framLayout"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:onClick="@{listener.onClickAvatar}"
+                        android:layout_marginTop="32dp"
+
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        >
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/imgProfile"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@color/blue"
+                            />
+
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_margin="1dp"
+                            android:background="@drawable/circle_white"
+
+                            android:layout_gravity="bottom|right"
+                            >
+
+                            <ImageView
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                app:tint="@color/tintIcon"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_camera"
+                                />
+
+                        </FrameLayout>
+
+
+                    </FrameLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tImage"
+                        style="@style/textViewOpen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/upload_image"
+                        android:gravity="center"
+                        android:textColorHint="@color/gray_description"
+
+                        app:layout_constraintTop_toBottomOf="@id/framLayout"
+                        app:layout_constraintStart_toStartOf="@+id/framLayout"
+                        app:layout_constraintEnd_toEndOf="@id/framLayout"
+                        android:layout_marginTop="16dp"
+                        />
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/labelInvite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/textLabelOpen"
+                    android:textSize="17sp"
+                    android:text="@string/add_other_users"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintPhoto"
+
+                    />
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tInviteDescription"
+                    style="@style/textViewOpen"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/invite_pepole_for_use_our_help"
+                    android:textColor="@color/gray_description"
+
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/labelInvite"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnInvite"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    style="@style/button1"
+
+                    android:layout_marginTop="4dp"
+                    android:text="@string/invite_user"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    app:layout_constraintTop_toBottomOf="@+id/tInviteDescription"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFinish"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+
+                    style="@style/button2"
+
+
+
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/finish_later"
+                    android:layout_marginTop="32dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnNext"
+                    app:layout_constraintTop_toBottomOf="@+id/btnInvite"
+                    app:layout_constraintStart_toStartOf="@id/guidelineBegin"
+                    />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNext"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    style="@style/button2"
+                    android:text="@string/next"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="32dp"
+
+                    app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+                    app:layout_constraintTop_toBottomOf="@+id/btnInvite"
+                    app:layout_constraintStart_toEndOf="@+id/btnFinish"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</layout>
