@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Zippympv"
         tools:targetApi="31">
         <activity
-            android:name=".view.SliderActivity"
+            android:name=".view.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".view.SliderActivity"/>
         <activity android:name=".view.auth.QuestionLogin1Activity"/>
         <activity android:name=".view.auth.QuestionLogin2Activity"/>
         <activity android:name=".view.auth.QuestionLogin3Activity"/>
